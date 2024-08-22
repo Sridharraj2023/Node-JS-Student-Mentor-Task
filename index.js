@@ -4,8 +4,8 @@ import dotenv from 'dotenv';  // Importing the dotenv module to load environment
 import mongoose from 'mongoose';  // Importing the mongoose module for MongoDB interaction
 
 // Importing routes
-import studentRoutes from './routes/studentRoutes.js';  // Importing student routes from the studentRoutes.js file
-import mentorRoutes from './routes/mentorRoutes.js';  // Importing mentor routes from the mentorRoutes.js file
+import studentRoutes from './routes/studentroutes.js';  // Importing student routes from the studentRoutes.js file
+import mentorRoutes from './routes/mentorroutes.js';  // Importing mentor routes from the mentorRoutes.js file
 
 // Initialize the app
 dotenv.config();  // Load environment variables from a .env file into process.env
@@ -15,7 +15,7 @@ const app = express();  // Create an instance of an Express application
 app.use(express.json());  // Middleware to parse JSON bodies in incoming requests
 
 // Connect to MongoDB
-mongoose.connect(process.env.MONGO_URI, {  // Connect to MongoDB using the connection string from the .env file
+mongoose.connect(process.env.MONGO_URL, {  // Connect to MongoDB using the connection string from the .env file
   useNewUrlParser: true,  // Use the new MongoDB connection string parser
   useUnifiedTopology: true  // Use the new topology engine for MongoDB connections
 })
