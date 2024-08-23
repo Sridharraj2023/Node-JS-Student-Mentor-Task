@@ -2,14 +2,14 @@ import Student from "../models/student.js";
 
 //Service function to create a new student 
 
-const createStudent = async (studentData) => {
+export const createStudent = async (studentData) => {
     const student = new Student(studentData);
     return await student.save();
 };
 
 //Service function to assign mentor to student
 
-const assignMentorToStudent = async (studentId, mentorId) => {
+export const assignMentorToStudent = async (studentId, mentorId) => {
 
     const student = await Student.findById(studentId); //Find the student by their ID
 
@@ -21,13 +21,13 @@ const assignMentorToStudent = async (studentId, mentorId) => {
 //Service functin to get the mentor assigned to a particular student
 
 
-const getMentorForStudent = async (studentId) => {
+export const getMentorForStudent = async (studentId) => {
 
     return await Student.findById(studentId).populate('mentor');
 
 };
 
-module.exports = {createStudent, assignMentorToStudent, getMentorForStudent};
+
 
 
 

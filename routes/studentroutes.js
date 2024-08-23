@@ -2,7 +2,7 @@ import express from 'express'
 import {createStudent, assignMentorToStudent, getMentorForStudent} from '../services/studentservices.js'
 import {successResponse, errorResponse} from '../utils/responseHandler.js'
 
-router = express.Router();
+const router = express.Router();
 
 // Route to create a new student
 router.post('/', async (req, res) => {
@@ -35,4 +35,4 @@ router.get('/:id/mentor', async (req, res) => {
 });
 
 // Exporting the router to be used in other parts of the application
-module.exports = router;
+export default router;

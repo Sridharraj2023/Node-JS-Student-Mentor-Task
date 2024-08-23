@@ -2,7 +2,7 @@ import Mentor from '../models/mentor.js';
 
 //Service function to create new mentor
 
-const createMentor = async (mentorData) => {
+export const createMentor = async (mentorData) => {
 
     const mentor = new Mentor(mentorData());
 
@@ -11,7 +11,7 @@ const createMentor = async (mentorData) => {
 
 //Service function to assign the students to mentor
 
-const assignStudentsToMentor = async (mentorID, studentIDs) => {
+export const assignStudentsToMentor = async (mentorID, studentIDs) => {
 
     const mentor = await Mentor.findById(mentorID); //Find the mentor by their ID
 
@@ -22,10 +22,10 @@ const assignStudentsToMentor = async (mentorID, studentIDs) => {
 
 //Service function to get studnets assigned to particular mentor
 
-const getStudentsForMentor = async (mentorID) => {
+export const getStudentsForMentor = async (mentorID) => {
 
     return await Mentor.findById(mentorID).populate('students');
 };
 
-module.exports = {createMentor, assignStudentsToMentor, getStudentsForMentor};
+
 
