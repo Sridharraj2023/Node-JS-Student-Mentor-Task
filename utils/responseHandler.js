@@ -8,9 +8,12 @@ export const successResponse = (res, data, message = 'Success') => {
 
 //Function to send error response
 
-export const errorResponse = (res, error, statusCode = 400) => {
-
-    return res.status(statusCode).json({message: error.message});
+export const errorResponse = (res, error) => {
+    return res.status(500).json({
+        success: false,
+        message: error.message || 'An error occurred',
+        error: error
+    });
 
 };
 
