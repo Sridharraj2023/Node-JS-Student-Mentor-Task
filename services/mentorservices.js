@@ -4,7 +4,7 @@ import Mentor from '../models/mentor.js';
 
 export const createMentor = async (mentorData) => {
 
-    const mentor = new Mentor(mentorData());
+    const mentor = new Mentor(mentorData);
 
     return await mentor.save();
 };
